@@ -69,8 +69,8 @@
     }
 
     .action-bar {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
+      display: flex;
+      flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 24px;
     }
@@ -95,8 +95,8 @@
     }
 
     .btn-download {
+      flex: 1 1 260px;
       display: block;
-      width: 100%;
       background-color: var(--accent-gold);
       color: #111215;
       text-align: center;
@@ -130,6 +130,12 @@
       font-size: 13px;
       padding: 8px 16px;
       border-radius: 4px;
+    }
+
+    .btn-cep {
+      border-color: rgba(200, 169, 110, 0.55);
+      color: var(--accent-gold);
+      font-weight: 600;
     }
 
     .info-list {
@@ -321,7 +327,6 @@
       font-size: 13px;
     }
 
-    /* Лайтбокс для просмотра скриншотов */
     .lightbox {
       display: none;
       position: fixed;
@@ -365,7 +370,6 @@
     .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
     .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
 
-    /* Единая подсветка для второстепенных кнопок и карточек */
     .btn-secondary,
     .relation-card {
       transition: border-color 0.2s, transform 0.2s, background-color 0.2s;
@@ -378,10 +382,12 @@
     }
 
     @media (max-width: 820px) {
-      .action-bar,
       .top-grid,
       .middle-grid {
         grid-template-columns: 1fr;
+      }
+      .btn-secondary {
+        flex: 1 1 100%;
       }
       .screenshots-grid {
         grid-template-columns: 1fr 1fr;
@@ -437,14 +443,17 @@
   </div>
 
   <div class="action-bar">
-    <a id="mod-download" href="#" class="btn-download">
+    <a id="mod-download" href="#" target="_blank" class="btn-download">
       СКАЧАТЬ МОДУЛЬ
       <span id="mod-file-info"></span>
+    </a>
+    <a id="mod-cep" href="#" target="_blank" class="btn-secondary btn-cep" style="display: none;">
+      Требуется CEP
     </a>
     <a id="mod-install" href="install.html" class="btn-secondary">
       Как установить модуль?
     </a>
-    <a id="mod-review" href="#" class="btn-secondary">
+    <a id="mod-review" href="#" target="_blank" class="btn-secondary">
       Читать обзор в Статьях ВК →
     </a>
   </div>
@@ -492,6 +501,8 @@
     cover: "images/elegia-banner.jpg",
     downloadUrl: "https://yandex.ru...",
     downloadInfo: "Версия 1.04 • Русификатор встроен (48 МБ)",
+    cepUrl: "", // Вставьте ссылку на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65",
     installUrl: "install.html",
     reviewUrl: "https://vk.ru",
 
@@ -554,6 +565,17 @@
   document.getElementById("mod-cover").src = MODULE_DATA.cover;
   document.getElementById("mod-download").href = MODULE_DATA.downloadUrl;
   document.getElementById("mod-file-info").textContent = MODULE_DATA.downloadInfo;
+
+  const cepBtn = document.getElementById("mod-cep");
+  if (cepBtn) {
+    if (MODULE_DATA.cepUrl) {
+      cepBtn.href = MODULE_DATA.cepUrl;
+      if (MODULE_DATA.cepLabel) cepBtn.textContent = MODULE_DATA.cepLabel;
+      cepBtn.style.display = "flex";
+    } else {
+      cepBtn.style.display = "none";
+    }
+  }
 
   const installBtn = document.getElementById("mod-install");
   if (installBtn && MODULE_DATA.installUrl) {
@@ -694,6 +716,4 @@
 </script>
 
 </body>
-</html>
-
 </html>
