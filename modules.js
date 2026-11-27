@@ -94,6 +94,11 @@ const MODULES_DB = {
       { name: "Stefan Gagne", role: "Разработчик модуля →", url: "catalog.html?author=Stefan+Gagne" }
     ],
 
-    screenshots: []
+    screenshots: [
+      "images/excrucio-1.jpg",
+      "images/excrucio-2.jpg",
+      "images/excrucio-3.jpg",
+      "images/excrucio-4.jpg"
+    ]
   }
 };
