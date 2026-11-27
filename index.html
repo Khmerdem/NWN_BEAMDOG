@@ -171,7 +171,7 @@
     .stars {
       color: var(--accent-gold);
       font-size: 20px;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
     .score-num {
       font-size: 28px;
@@ -194,16 +194,25 @@
       color: var(--text-muted);
       margin-bottom: 6px;
     }
+    .rate-stars {
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+    }
     .rate-stars button {
       background: none;
       border: none;
       color: #4a4f5a;
-      font-size: 20px;
+      font-size: 21px;
+      line-height: 1;
+      padding: 0;
       cursor: pointer;
+      transition: color 0.15s, transform 0.15s;
     }
     .rate-stars button.active,
     .rate-stars button:hover {
       color: var(--accent-gold);
+      transform: scale(1.15);
     }
 
     .awards-list {
@@ -312,6 +321,7 @@
       font-size: 13px;
     }
 
+    /* Лайтбокс для просмотра скриншотов */
     .lightbox {
       display: none;
       position: fixed;
@@ -355,6 +365,7 @@
     .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
     .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
 
+    /* Единая подсветка для второстепенных кнопок и карточек */
     .btn-secondary,
     .relation-card {
       transition: border-color 0.2s, transform 0.2s, background-color 0.2s;
@@ -402,7 +413,7 @@
     <div>
       <div class="section-header">Рейтинг</div>
       <div class="rating-box">
-        <div class="stars">★★★★★</div>
+        <div class="stars">★★★★★★★★★★</div>
         <div class="score-num" id="mod-score"></div>
         <div class="score-source">Оценка на NWVault</div>
         <div class="user-rate">
@@ -413,6 +424,11 @@
             <button data-val="3">★</button>
             <button data-val="4">★</button>
             <button data-val="5">★</button>
+            <button data-val="6">★</button>
+            <button data-val="7">★</button>
+            <button data-val="8">★</button>
+            <button data-val="9">★</button>
+            <button data-val="10">★</button>
           </div>
         </div>
       </div>
@@ -481,14 +497,14 @@
 
     info: {
       "Совместимость": "v1.69 / NWN:EE",
-	    "Дата выхода": "черт знает когда",
+      "Дата выхода": "черт знает когда",
       "Сеттинг": "Авторский",
       "Время игры": "3–5 часов",
       "Ролеплей": "Средне",
       "Сражения": "Средне",
-	    "Количество игроков": "1 или более",
+      "Количество игроков": "1 или более",
       "Нач. уровень": "5-й уровень",
-	    "Требования пола": "Нет",
+      "Требования пола": "Нет",
       "Требования классов": "Любой",
       "Необходимость в ДМ": "Нет",
       "Перевод": "Михаил Кард"
@@ -672,7 +688,7 @@
       stars.forEach(function(s) {
         s.classList.toggle('active', Number(s.dataset.val) <= val);
       });
-      rateLabel.textContent = 'Ваша оценка: ' + val + ' из 5';
+      rateLabel.textContent = 'Ваша оценка: ' + val + ' из 10';
     });
   });
 </script>
