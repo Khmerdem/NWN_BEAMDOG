@@ -259,7 +259,7 @@ const MODULES_DB = {
   },  
 
   "aelund-saga4": {
-    title: "The Aielund Saga Act 4 - Part One", // Название
+    title: "The Aielund Saga Act 4 - Part 1", // Название
     game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
     cover: "images/aielund4-banner.jpg", // Превью
     downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
@@ -297,7 +297,7 @@ const MODULES_DB = {
 
     related: [
       { title: "The Aielund Saga Act 3 - Return of the Ironlord", type: "Предыстория →", url: "module.html?id=aelund-saga3" },
-      { title: "The Aielund Saga Act 4 - Part Two", type: "Продолжение →", url: "module.html?id=aelund-saga5" }
+      { title: "The Aielund Saga Act 4 - Part 2", type: "Продолжение →", url: "module.html?id=aelund-saga5" }
     ],
 
     authors: [
@@ -312,7 +312,7 @@ const MODULES_DB = {
   },
 
    "aelund-saga5": {
-    title: "The Aielund Saga Act 4 - Part Two", // Название
+    title: "The Aielund Saga Act 4 - Part 2", // Название
     game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
     cover: "images/aielund5-banner.jpg", // Превью
     downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
@@ -351,8 +351,8 @@ const MODULES_DB = {
     ],
 
     related: [
-      { title: "The Aielund Saga Act 4 - Part One", type: "Предыстория →", url: "module.html?id=aelund-saga4" },
-      { title: "The Aielund Saga Act 4 - Part Three", type: "Продолжение →", url: "module.html?id=aelund-saga6" }
+      { title: "The Aielund Saga Act 4 - Part 1", type: "Предыстория →", url: "module.html?id=aelund-saga4" },
+      { title: "The Aielund Saga Act 4 - Part 3", type: "Продолжение →", url: "module.html?id=aelund-saga6" }
     ],
 
     authors: [
@@ -367,7 +367,7 @@ const MODULES_DB = {
   },
 
     "aelund-saga6": {
-    title: "The Aielund Saga Act 4 - Part Three", // Название
+    title: "The Aielund Saga Act 4 - Part 3", // Название
     game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
     cover: "images/aielund6-banner.jpg", // Превью
     downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
@@ -406,7 +406,7 @@ const MODULES_DB = {
     ],
 
     related: [
-      { title: "The Aielund Saga Act 4 - Part Two", type: "Предыстория →", url: "module.html?id=aelund-saga4" }
+      { title: "The Aielund Saga Act 4 - Part 2", type: "Предыстория →", url: "module.html?id=aelund-saga4" }
     ],
 
     authors: [
