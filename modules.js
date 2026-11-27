@@ -138,7 +138,7 @@ const MODULES_DB = {
     ],
 
     related: [
-      
+      { title: "The Aielund Saga Act 2 - Defender of the Crown", type: "Продолжение →", url: "module.html?id=aelund-saga2" }  
     ],
 
     authors: [
@@ -153,7 +153,7 @@ const MODULES_DB = {
   },
 
     "aelund-saga2": {
-    title: "The Aielund Saga Act 2 - Defender of the Crown ", // Название
+    title: "The Aielund Saga Act 2 - Defender of the Crown", // Название
     game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
     cover: "images/aielund2-banner.jpg", // Превью
     downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
@@ -191,7 +191,7 @@ const MODULES_DB = {
     ],
 
     related: [
-      
+      { title: "The Aielund Saga Act 3 - Return of the Ironlord", type: "Продолжение →", url: "module.html?id=aelund-saga3" }        
     ],
 
     authors: [
@@ -203,5 +203,5 @@ const MODULES_DB = {
       "images/aelund-saga2-2.jpg",
       "images/aelund-saga2-3.jpg"
     ]
-  },  
+  }
 };
