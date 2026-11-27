@@ -159,6 +159,10 @@
     });
   }
 
+  filtered.sort(function(a, b) {
+    return a[1].title.localeCompare(b[1].title);
+  });
+
   if (filtered.length === 0) {
     listEl.innerHTML = '<div class="empty-msg">В этом разделе пока нет добавленных модулей.</div>';
   } else {
