@@ -150,5 +150,58 @@ const MODULES_DB = {
       "images/aelund-saga1-2.jpg",
       "images/aelund-saga1-3.jpg"
     ]
+  },
+
+      "aelund-saga2": {
+    title: "The Aielund Saga Act 2 - Defender of the Crown", // Название
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
+    cover: "images/aielund2-banner.jpg", // Превью
+    downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
+    downloadInfo: "Русификатор встроен", // Текст на кнопке ссылки
+    cepUrl: "https://neverwintervault.org/sites/neverwintervault.org/files/project/8011/files/cep_2_65_full.7z", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
+    installUrl: "install.html", // Ссылка на кнопке "Как установить"
+    reviewUrl: "", // Ссылка на кнопке "Обзор"
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "01.05.2004",
+      "Сеттинг": "Kingdom Aielund",
+      "Время игры": "8-15 часов",
+      "Ролеплей": "Средне",
+      "Сражения": "Много",
+      "Количество игроков": "1-6",
+      "Нач. уровень": "8-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Нет",
+      "Перевод": "Keleis, TheAngeDechu, Lord_Draconis"
+    },
+
+    score: "9.2",
+    awards: [
+      "🏆 NWVault Hall of Fame",
+      "🎖️ Reviewers Award"
+    ],
+
+    description: [
+      "Ферлок - величественная столица Аэлунда и дом королевской семьи. Но не все ладно в городе правосудия. Пока король далеко, и только принцесса Криоса является представителем королевской семьи, тайные заговорщики стремятся убить ее и занять трон Ферлока."
+
+      "Вам и вашим спутникам придётся углубиться в сердце города, отважные попытки убийства и побороть зло из могилы, в то же время вам предстоит расследовать реальную причину войны на Западе, и обнаружить гораздо более зловещего врага, чем мелкие злодеи, которые стремятся захватить власть."
+    ],
+
+    related: [
+  
+    ],
+
+    authors: [
+      { name: "Savant", role: "Разработчик модуля →", url: "catalog.html?author=Savant" }
+    ],
+
+    screenshots: [
+      "images/aelund-saga2-1.jpg",
+      "images/aelund-saga2-2.jpg",
+      "images/aelund-saga2-3.jpg"
+    ]
   }
 };
