@@ -138,7 +138,7 @@ const MODULES_DB = {
     ],
 
     related: [
-      
+     { title: "The Aielund Saga Act 2 - Defender of the Crown", type: "Прямое продолжение →", url: "module.html?id=aelund-saga2" }   
     ],
 
     authors: [
