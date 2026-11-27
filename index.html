@@ -419,7 +419,7 @@
     <div>
       <div class="section-header">Рейтинг</div>
       <div class="rating-box">
-        <div class="stars">★★★★★★★★★★</div>
+        <div class="stars" id="mod-stars"></div>
         <div class="score-num" id="mod-score"></div>
         <div class="score-source">Оценка на NWVault</div>
         <div class="user-rate">
@@ -517,7 +517,6 @@
       "Нач. уровень": "5-й уровень",
       "Требования пола": "Нет",
       "Требования классов": "Любой",
-      "Требуется CEP": "Нет",
       "Необходимость в ДМ": "Нет",
       "Перевод": "Михаил Кард"
     },
@@ -599,6 +598,11 @@
   }
 
   document.getElementById("mod-score").textContent = MODULE_DATA.score;
+  const filledStars = Math.round(parseFloat(MODULE_DATA.score) || 0);
+  const emptyStars = Math.max(0, 10 - filledStars);
+  document.getElementById("mod-stars").innerHTML =
+    "★".repeat(filledStars) + '<span style="color: #4a4f5a;">' + "★".repeat(emptyStars) + "</span>";
+
   const awardsList = document.getElementById("awards-list");
   MODULE_DATA.awards.forEach(function(a) {
     awardsList.innerHTML += '<div class="award-badge">' + a + '</div>';
