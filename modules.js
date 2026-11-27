@@ -204,5 +204,110 @@ const MODULES_DB = {
       "images/aelund-saga2-2.jpg",
       "images/aelund-saga2-3.jpg"
     ]
-  }
+  },
+
+  "aelund-saga3": {
+    title: "The Aielund Saga Act 3 - Return of the Ironlord", // Название
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
+    cover: "images/aielund3-banner.jpg", // Превью
+    downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
+    downloadInfo: "Русификатор встроен", // Текст на кнопке ссылки
+    cepUrl: "https://neverwintervault.org/sites/neverwintervault.org/files/project/8011/files/cep_2_65_full.7z", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
+    installUrl: "install.html", // Ссылка на кнопке "Как установить"
+    reviewUrl: "", // Ссылка на кнопке "Обзор"
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "22.11.2004",
+      "Сеттинг": "Kingdom Aielund",
+      "Время игры": "12-16 часов",
+      "Ролеплей": "Средне",
+      "Сражения": "Много",
+      "Количество игроков": "1-6",
+      "Нач. уровень": "15-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Нет",
+      "Перевод": "Rezerford, TheAngeDechu, Keleis, Lord_Draconis"
+    },
+
+    score: "9",
+    awards: [
+      "🏆 NWVault Hall of Fame",
+      "🎖️ Reviewers Award"
+    ],
+
+    description: [
+      "Обезопасив на некоторое время город Фэрлок, и теперь, когда королевская семья в безопасности, вы обращаете своё внимание на Запад, на короля Шеймуса и армию Аэлунда, сражающихся за победу над Железным Лордом. Кажется, всё идет по плану, пока древний монстр не вырвется из своей многовековой тюрьмы и не предпримет целеустремлённого усилия захватить господство на земле. В условиях сельской местности, наводнённой существами всех видов, стремящимися бежать от продолжающегося конфликта, вы и ваши спутники должны отразить натиск полчищ монстров, противостоять старым врагам и искать реликвии из далекого прошлого, все время находясь в поиске союзников, чтобы они помогли вам в финальном столкновении с Железным Лордом. Но перед тем, как противостоять ему, вы должны узнать ответ на вопрос особой важности: как убить то, что нельзя убить?"
+    ],
+
+    related: [
+      { title: "The Aielund Saga Act 2 - Defender of the Crown", type: "Предыстория →", url: "module.html?id=aelund-saga2" },
+      { title: "The Aielund Saga Act 4 - Part One", type: "Продолжение →", url: "module.html?id=aelund-saga4" }
+    ],
+
+    authors: [
+      { name: "Savant", role: "Разработчик модуля →", url: "catalog.html?author=Savant" }
+    ],
+
+    screenshots: [
+      "images/aelund-saga3-1.jpg",
+      "images/aelund-saga3-2.jpg",
+      "images/aelund-saga3-3.jpg"
+    ]
+  },  
+
+  "aelund-saga4": {
+    title: "The Aielund Saga Act 4 - Part One", // Название
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
+    cover: "images/aielund4-banner.jpg", // Превью
+    downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
+    downloadInfo: "Русификатор встроен", // Текст на кнопке ссылки
+    cepUrl: "https://neverwintervault.org/sites/neverwintervault.org/files/project/8011/files/cep_2_65_full.7z", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
+    installUrl: "install.html", // Ссылка на кнопке "Как установить"
+    reviewUrl: "", // Ссылка на кнопке "Обзор"
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "28.06.2005",
+      "Сеттинг": "Kingdom Aielund",
+      "Время игры": "5 часов",
+      "Ролеплей": "Средне",
+      "Сражения": "Много",
+      "Количество игроков": "1-6",
+      "Нач. уровень": "23-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Нет",
+      "Перевод": "TheAngeDechu, Keleis, Lord_Draconis"
+    },
+
+    score: "9,5",
+    awards: [
+      "🏆 NWVault Hall of Fame"
+    ],
+
+    description: [
+      "Минуло два года с той кровавой битвы при форте Хаймарк, но страхи, породившие новую власть короля, продолжают приносить горькие плоды. Аэлунд погряз в бесконечной войне со своими соседями, однако все стороны истощены и измучены, конфликт зашел в опасный тупик, а исхода страданий людей не видно.",
+
+      "И теперь, когда король Шеймус медленно, но неумолимо теряет последние ниточки связи с реальностью, что-то необходимо предпринять. В разрываемой распрями стране набирает силу мятежная фракция, возглавляемая самой дочерью короля, Криосой. Вам и вашим соратникам предстоит найти способ свергнуть безумного монарха, пока его страстное властолюбие окончательно не разрушило королевство."
+    ],
+
+    related: [
+      { title: "The Aielund Saga Act 3 - Return of the Ironlord", type: "Предыстория →", url: "module.html?id=aelund-saga3" },
+      { title: "The Aielund Saga Act 4 - Part Two", type: "Продолжение →", url: "module.html?id=aelund-saga5" }
+    ],
+
+    authors: [
+      { name: "Savant", role: "Разработчик модуля →", url: "catalog.html?author=Savant" }
+    ],
+
+    screenshots: [
+      "images/aelund-saga4-1.jpg",
+      "images/aelund-saga4-2.jpg",
+      "images/aelund-saga4-3.jpg"
+    ]
+  }  
 };
