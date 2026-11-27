@@ -415,7 +415,11 @@
       url: "excrucio.html"
     },
 
-    author: "Stefan Gagne",
+    author: {
+      name: "Stefan Gagne",
+      url: "author-stefan-gagne.html"
+    },
+
 
     screenshots: [
       "images/elegia-1.jpg",
@@ -469,7 +473,8 @@
     document.getElementById("related-block").style.display = "none";
   }
 
-  document.getElementById("mod-author").textContent = MODULE_DATA.author;
+  document.getElementById("mod-author").textContent = MODULE_DATA.author.name;
+  document.getElementById("author-link").href = MODULE_DATA.author.url;
 
   const shotsGrid = document.getElementById("screenshots-grid");
   if (MODULE_DATA.screenshots.length > 0) {
