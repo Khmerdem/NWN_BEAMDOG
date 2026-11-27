@@ -30,8 +30,12 @@
     .container { max-width: 1020px; margin: 0 auto; }
 
     .breadcrumbs {
-      font-size: 13px; color: var(--text-muted); margin-bottom: 12px;
-      display: flex; flex-wrap: wrap; gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
     .breadcrumbs a {
       color: var(--accent-gold);
@@ -44,10 +48,16 @@
     }
 
     .title-block {
-      margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
     }
-    .title-block h1 { font-size: 26px; font-weight: 700; color: #ffffff; }
-    .title-block .subtitle { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+    .title-block h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
     .hero-banner {
       width: 100%;
       max-height: 280px;
@@ -95,6 +105,7 @@
       font-size: 15px;
       padding: 12px 16px;
       border-radius: 4px;
+      transition: background-color 0.2s;
     }
     .btn-download:hover {
       background-color: var(--accent-gold-hover);
@@ -241,6 +252,7 @@
       border-radius: 4px;
       text-decoration: none;
       color: var(--text-main);
+      margin-bottom: 10px;
     }
     .relation-info strong {
       display: block;
@@ -250,6 +262,24 @@
     .relation-info span {
       font-size: 12px;
       color: var(--accent-gold);
+    }
+
+    .btn-expand {
+      width: 100%;
+      background-color: transparent;
+      border: 1px dashed var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+    }
+    .btn-expand:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      background-color: rgba(200, 169, 110, 0.05);
     }
 
     .screenshots-grid {
@@ -264,6 +294,12 @@
       object-fit: cover;
       border-radius: 4px;
       border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .screenshots-grid img:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
     }
 
     .vk-comments-placeholder {
@@ -276,24 +312,7 @@
       font-size: 13px;
     }
 
-    @media (max-width: 820px) {
-      .action-bar,
-      .top-grid,
-      .middle-grid {
-        grid-template-columns: 1fr;
-      }
-      .screenshots-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .screenshots-grid img {
-      cursor: pointer;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    .screenshots-grid img:hover {
-      border-color: var(--accent-gold);
-      transform: translateY(-2px);
-    }
+    /* Лайтбокс для просмотра скриншотов */
     .lightbox {
       display: none;
       position: fixed;
@@ -337,11 +356,11 @@
     .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
     .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
 
+    /* Единая подсветка для второстепенных кнопок и карточек */
     .btn-secondary,
     .relation-card {
       transition: border-color 0.2s, transform 0.2s, background-color 0.2s;
     }
-
     .btn-secondary:hover,
     .relation-card:hover {
       border-color: var(--accent-gold);
@@ -349,9 +368,20 @@
       transform: translateY(-2px);
     }
 
+    @media (max-width: 820px) {
+      .action-bar,
+      .top-grid,
+      .middle-grid {
+        grid-template-columns: 1fr;
+      }
+      .screenshots-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+
 <div class="container">
   <nav class="breadcrumbs">
     <a href="index.html">Главная</a> /
@@ -413,22 +443,12 @@
   <div class="middle-grid">
     <div id="related-block">
       <div class="section-header">Связанное</div>
-      <a id="related-link" href="#" class="relation-card">
-        <div class="relation-info">
-          <strong id="related-title"></strong>
-          <span id="related-type"></span>
-        </div>
-      </a>
+      <div id="related-list"></div>
     </div>
 
-    <div>
+    <div id="authors-block">
       <div class="section-header">Авторы</div>
-      <a id="author-link" href="#" class="relation-card">
-        <div class="relation-info">
-          <strong id="mod-author"></strong>
-          <span>Разработчик модуля</span>
-        </div>
-      </a>
+      <div id="authors-list"></div>
     </div>
   </div>
 
@@ -444,6 +464,7 @@
     </div>
   </section>
 </div>
+
 <div id="lightbox" class="lightbox">
   <button class="lb-btn lb-close" id="lb-close" title="Закрыть">✕</button>
   <button class="lb-btn lb-prev" id="lb-prev" title="Назад">❮</button>
@@ -461,16 +482,14 @@
 
     info: {
       "Совместимость": "v1.69 / NWN:EE",
-	  "Дата выхода": "черт знает когда",
       "Сеттинг": "Авторский",
+      "Количество игроков": "1 или более",
+      "Нач. уровень": "5-й уровень",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Нет",
       "Время игры": "3–5 часов",
       "Ролеплей": "Средне",
       "Сражения": "Средне",
-	  "Количество игроков": "1 или более",
-      "Нач. уровень": "5-й уровень",
-	  "Требования пола": "Нет",
-      "Требования классов": "Любой",
-      "Необходимость в ДМ": "Нет",
       "Перевод": "Михаил Кард"
     },
 
@@ -485,16 +504,13 @@
       "Драматический и мистический модуль от Стефана Гагнье с авторской музыкой, озвучкой и портретами персонажей, где акцент сделан на атмосфере, диалогах и исследовании окружения."
     ],
 
-    related: {
-      title: "Excrucio Eternum",
-      type: "Прямое продолжение →",
-      url: "excrucio.html"
-    },
+    related: [
+      { title: "Excrucio Eternum", type: "Прямое продолжение →", url: "excrucio.html" }
+    ],
 
-    author: {
-      name: "Stefan Gagne",
-      url: "author-stefan-gagne.html"
-    },
+    authors: [
+      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "author-stefan-gagne.html" }
+    ],
 
     screenshots: [
       "images/elegia-1.jpg",
@@ -540,19 +556,47 @@
     descBox.innerHTML += '<p>' + p + '</p>';
   });
 
-  if (MODULE_DATA.related && MODULE_DATA.related.title) {
-    document.getElementById("related-title").textContent = MODULE_DATA.related.title;
-    document.getElementById("related-type").textContent = MODULE_DATA.related.type;
-    document.getElementById("related-link").href = MODULE_DATA.related.url;
-  } else {
-    document.getElementById("related-block").style.display = "none";
+  function renderCollapsibleList(items, containerId, blockId, buildCardHtml) {
+    const container = document.getElementById(containerId);
+    const block = document.getElementById(blockId);
+    if (!items || items.length === 0) {
+      block.style.display = "none";
+      return;
+    }
+
+    const limit = 2;
+    let expanded = false;
+
+    function updateView() {
+      container.innerHTML = "";
+      const visibleItems = expanded ? items : items.slice(0, limit);
+      visibleItems.forEach(function(item) {
+        container.innerHTML += buildCardHtml(item);
+      });
+
+      if (items.length > limit) {
+        const hiddenCount = items.length - limit;
+        const btn = document.createElement("button");
+        btn.className = "btn-expand";
+        btn.textContent = expanded ? "Свернуть ↑" : "Развернуть ещё (" + hiddenCount + ") ↓";
+        btn.addEventListener("click", function() {
+          expanded = !expanded;
+          updateView();
+        });
+        container.appendChild(btn);
+      }
+    }
+
+    updateView();
   }
 
-  document.getElementById("mod-author").textContent = MODULE_DATA.author.name;
-  const authorLink = document.getElementById("author-link");
-  if (authorLink) {
-    authorLink.href = MODULE_DATA.author.url;
-  }
+  renderCollapsibleList(MODULE_DATA.related, "related-list", "related-block", function(item) {
+    return '<a href="' + item.url + '" class="relation-card"><div class="relation-info"><strong>' + item.title + '</strong><span>' + item.type + '</span></div></a>';
+  });
+
+  renderCollapsibleList(MODULE_DATA.authors, "authors-list", "authors-block", function(a) {
+    return '<a href="' + a.url + '" class="relation-card"><div class="relation-info"><strong>' + a.name + '</strong><span>' + a.role + '</span></div></a>';
+  });
 
   const shotsGrid = document.getElementById("screenshots-grid");
   const lightbox = document.getElementById("lightbox");
@@ -620,4 +664,6 @@
 </script>
 
 </body>
+</html>
+
 </html>
