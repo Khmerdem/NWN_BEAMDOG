@@ -482,9 +482,7 @@
 
   <section>
     <div class="section-header">Отзывы и обсуждение</div>
-    <div class="vk-comments-placeholder">
-      Здесь подключается стандартный виджет комментариев ВКонтакте.
-    </div>
+    <div id="vk_comments"></div>
   </section>
 </div>
 
@@ -698,6 +696,15 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/114728647" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+
+<script type="text/javascript" src="https://vk.ru"></script>
+<script type="text/javascript">
+  VK.init({ apiId: 7794785, onlyWidgets: true });
+  VK.Widgets.Comments("vk_comments", {
+    limit: 10,
+    attach: "*"
+  }, modId);
+</script>  
   
 </body>
 </html>
