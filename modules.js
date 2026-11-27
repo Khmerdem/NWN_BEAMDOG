@@ -108,10 +108,10 @@ const MODULES_DB = {
     cover: "images/aielund1-banner.jpg", // Превью
     downloadUrl: "https://disk.yandex.ru/d/q_QBBxo8HPudXQ", // Ссылка на скачивание
     downloadInfo: "Русификатор встроен", // Текст на кнопке ссылки
-    cepUrl: "https://neverwintervault.org/sites/neverwintervault.org/files/project/8011/files/cep_2_65_full.7z|Скачать CEP 2.65", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepUrl: "https://neverwintervault.org/sites/neverwintervault.org/files/project/8011/files/cep_2_65_full.7z", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
     cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
     installUrl: "install.html", // Ссылка на кнопке "Как установить"
-    reviewUrl: "https://vk.ru", // Ссылка на кнопке "Обзор"
+    reviewUrl: "", // Ссылка на кнопке "Обзор"
 
     info: {
       "Совместимость": "v1.69 / NWN:EE",
