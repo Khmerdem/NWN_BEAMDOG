@@ -312,7 +312,6 @@
       font-size: 13px;
     }
 
-    /* Лайтбокс для просмотра скриншотов */
     .lightbox {
       display: none;
       position: fixed;
@@ -385,7 +384,7 @@
   <nav class="breadcrumbs">
     <a href="index.html">Главная</a> /
     <a href="modules.html">Модули</a> /
-    <a href="nwn1.html">Neverwinter Nights</a>
+    <a id="crumb-game" href="nwn1.html">Neverwinter Nights</a>
   </nav>
 
   <header class="title-block">
@@ -473,6 +472,7 @@
 <script>
   const MODULE_DATA = {
     title: "Elegia Eternum",
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
     cover: "images/elegia-banner.jpg",
     downloadUrl: "https://yandex.ru...",
     downloadInfo: "Версия 1.04 • Русификатор встроен (48 МБ)",
@@ -481,16 +481,14 @@
 
     info: {
       "Совместимость": "v1.69 / NWN:EE",
-	    "Дата выхода": "черт знает когда",
       "Сеттинг": "Авторский",
+      "Количество игроков": "1 или более",
+      "Нач. уровень": "5-й уровень",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Нет",
       "Время игры": "3–5 часов",
       "Ролеплей": "Средне",
       "Сражения": "Средне",
-	    "Количество игроков": "1 или более",
-      "Нач. уровень": "5-й уровень",
-	    "Требования пола": "Нет",
-      "Требования классов": "Любой",
-      "Необходимость в ДМ": "Нет",
       "Перевод": "Михаил Кард"
     },
 
@@ -519,6 +517,19 @@
       "images/elegia-3.jpg"
     ]
   };
+
+  const GAMES_MAP = {
+    nwn1: { title: "Neverwinter Nights", url: "nwn1.html" },
+    nwnee: { title: "Neverwinter Nights EE", url: "nwnee.html" },
+    nwn2: { title: "Neverwinter Nights 2", url: "nwn2.html" }
+  };
+
+  const currentGame = GAMES_MAP[MODULE_DATA.game] || GAMES_MAP.nwn1;
+  const crumbGame = document.getElementById("crumb-game");
+  if (crumbGame) {
+    crumbGame.textContent = currentGame.title;
+    crumbGame.href = currentGame.url;
+  }
 
   document.title = MODULE_DATA.title + " — Каталог модулей NWN";
   document.getElementById("mod-title").textContent = MODULE_DATA.title;
