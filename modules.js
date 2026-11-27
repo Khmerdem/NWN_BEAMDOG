@@ -1,0 +1,99 @@
+const MODULES_DB = {
+  "elegia-eternum": {
+    title: "Elegia Eternum", // Название
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
+    cover: "images/elegia-banner.jpg", // Превью
+    downloadUrl: "https://yandex.ru...", // Ссылка на скачивание
+    downloadInfo: "Версия 1.04 • Русификатор встроен (48 МБ)", // Текст на кнопке ссылки
+    cepUrl: "", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
+    installUrl: "install.html", // Ссылка на кнопке "Как установить"
+    reviewUrl: "https://vk.ru", // Ссылка на кнопке "Обзор"
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "2003",
+      "Сеттинг": "Авторский",
+      "Время игры": "3–5 часов",
+      "Ролеплей": "Средне",
+      "Сражения": "Средне",
+      "Количество игроков": "1 или более",
+      "Нач. уровень": "5-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Нет",
+      "Перевод": "Михаил Кард"
+    },
+
+    score: "9.3",
+    awards: [
+      "🏆 NWVault Hall of Fame",
+      "🎖️ Reviewers Award"
+    ],
+
+    description: [
+      "История начинается привычно: искатель приключений в поисках могущественного артефакта останавливается в таверне. Но именно с этого момента герой погружается в таинственный мир её обитателей.",
+      "Драматический и мистический модуль от Стефана Гагнье с авторской музыкой, озвучкой и портретами персонажей, где акцент сделан на атмосфере, диалогах и исследовании окружения."
+    ],
+
+    related: [
+      { title: "Excrucio Eternum", type: "Прямое продолжение →", url: "module.html?id=excrucio-eternum" }
+    ],
+
+    authors: [
+      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "index.html?author=Stefan+Gagne" }
+    ],
+
+    screenshots: [
+      "images/elegia-1.jpg",
+      "images/elegia-2.jpg",
+      "images/elegia-3.jpg"
+    ]
+  },
+
+  "excrucio-eternum": {
+    title: "Excrucio Eternum",
+    game: "nwn1",
+    cover: "images/elegia-banner.jpg",
+    downloadUrl: "https://yandex.ru...",
+    downloadInfo: "Версия 1.0 • Русификатор встроен",
+    cepUrl: "",
+    cepLabel: "",
+    installUrl: "install.html",
+    reviewUrl: "",
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "2004",
+      "Сеттинг": "Авторский",
+      "Время игры": "4–6 часов",
+      "Ролеплей": "Высоко",
+      "Сражения": "Средне",
+      "Количество игроков": "1",
+      "Нач. уровень": "8-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Нет",
+      "Перевод": "Михаил Кард"
+    },
+
+    score: "9.1",
+    awards: [
+      "🏆 NWVault Hall of Fame"
+    ],
+
+    description: [
+      "Прямое продолжение истории Elegia Eternum, развивающее мрачную мистическую атмосферу оригинала."
+    ],
+
+    related: [
+      { title: "Elegia Eternum", type: "Предыдущая часть →", url: "module.html?id=elegia-eternum" }
+    ],
+
+    authors: [
+      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "index.html?author=Stefan+Gagne" }
+    ],
+
+    screenshots: []
+  }
+};
