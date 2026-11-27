@@ -477,7 +477,6 @@
       url: "author-stefan-gagne.html"
     },
 
-
     screenshots: [
       "images/elegia-1.jpg",
       "images/elegia-2.jpg",
@@ -494,15 +493,17 @@
   document.getElementById("mod-file-info").textContent = MODULE_DATA.downloadInfo;
 
   const installBtn = document.getElementById("mod-install");
-  if (MODULE_DATA.installUrl) {
+  if (installBtn && MODULE_DATA.installUrl) {
     installBtn.href = MODULE_DATA.installUrl;
   }
 
   const reviewBtn = document.getElementById("mod-review");
-  if (MODULE_DATA.reviewUrl) {
-    reviewBtn.href = MODULE_DATA.reviewUrl;
-  } else {
-    reviewBtn.style.display = "none";
+  if (reviewBtn) {
+    if (MODULE_DATA.reviewUrl) {
+      reviewBtn.href = MODULE_DATA.reviewUrl;
+    } else {
+      reviewBtn.style.display = "none";
+    }
   }
 
   const infoList = document.getElementById("info-list");
@@ -531,7 +532,62 @@
   }
 
   document.getElementById("mod-author").textContent = MODULE_DATA.author.name;
-  document.getElementById("author-link").href = MODULE_DATA.author.url;
+  const authorLink = document.getElementById("author-link");
+  if (authorLink) {
+    authorLink.href = MODULE_DATA.author.url;
+  }
+
+  const shotsGrid = document.getElementById("screenshots-grid");
+  const lightbox = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lb-img");
+  let currentShot = 0;
+
+  function openLightbox(index) {
+    currentShot = index;
+    lbImg.src = MODULE_DATA.screenshots[currentShot];
+    lightbox.classList.add("open");
+  }
+
+  function changeShot(step) {
+    const total = MODULE_DATA.screenshots.length;
+    currentShot = (currentShot + step + total) % total;
+    lbImg.src = MODULE_DATA.screenshots[currentShot];
+  }
+
+  if (MODULE_DATA.screenshots.length > 0) {
+    MODULE_DATA.screenshots.forEach(function(src, idx) {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Скриншот " + (idx + 1);
+      img.addEventListener("click", function() { openLightbox(idx); });
+      shotsGrid.appendChild(img);
+    });
+  } else {
+    document.getElementById("screenshots-section").style.display = "none";
+  }
+
+  if (lightbox) {
+    document.getElementById("lb-close").addEventListener("click", function() {
+      lightbox.classList.remove("open");
+    });
+    document.getElementById("lb-prev").addEventListener("click", function(e) {
+      e.stopPropagation();
+      changeShot(-1);
+    });
+    document.getElementById("lb-next").addEventListener("click", function(e) {
+      e.stopPropagation();
+      changeShot(1);
+    });
+    lightbox.addEventListener("click", function(e) {
+      if (e.target === lightbox) lightbox.classList.remove("open");
+    });
+    document.addEventListener("keydown", function(e) {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") lightbox.classList.remove("open");
+      if (e.key === "ArrowLeft") changeShot(-1);
+      if (e.key === "ArrowRight") changeShot(1);
+    });
+  }
 
   const stars = document.querySelectorAll('#rate-buttons button');
   const rateLabel = document.getElementById('rate-label');
