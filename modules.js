@@ -138,7 +138,7 @@ const MODULES_DB = {
     ],
 
     related: [
-     { title: "The Aielund Saga Act 2 - Defender of the Crown", type: "Прямое продолжение →", url: "module.html?id=aelund-saga2" }   
+     { title: "The Aielund Saga Act 2 - Defender of the Crown", type: "Продолжение →", url: "module.html?id=aelund-saga2" }  
     ],
 
     authors: [
@@ -178,7 +178,7 @@ const MODULES_DB = {
       "Перевод": "Keleis, TheAngeDechu, Lord_Draconis"
     },
 
-    score: "9.2",
+    score: "9.5",
     awards: [
       "🏆 NWVault Hall of Fame",
       "🎖️ Reviewers Award"
@@ -191,7 +191,8 @@ const MODULES_DB = {
     ],
 
     related: [
-  
+      { title: "The Aielund Saga - Act 1. Nature Abhors A Vacuum", type: "Предыстория →", url: "module.html?id=aelund-saga2" },
+      { title: "The Aielund Saga - Act 3 - Return of the Iron Lord", type: "Продолжение →", url: "module.html?id=aelund-saga3" }
     ],
 
     authors: [
