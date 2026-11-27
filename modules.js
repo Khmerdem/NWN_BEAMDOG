@@ -41,7 +41,7 @@ const MODULES_DB = {
     ],
 
     authors: [
-      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "index.html?author=Stefan+Gagne" }
+      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "catalog.html?author=Stefan+Gagne" }
     ],
 
     screenshots: [
@@ -91,7 +91,7 @@ const MODULES_DB = {
     ],
 
     authors: [
-      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "index.html?author=Stefan+Gagne" }
+      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "catalog.html?author=Stefan+Gagne" }
     ],
 
     screenshots: []
