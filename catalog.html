@@ -159,8 +159,8 @@
     });
   }
 
-  filtered.sort(function(a, b) {
-    return a[1].title.localeCompare(b[1].title);
+  filtered.sort(function([idA, modA], [idB, modB]) {
+    return modA.title.localeCompare(modB.title);
   });
 
   if (filtered.length === 0) {
