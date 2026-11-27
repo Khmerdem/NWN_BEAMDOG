@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как установить модуль — Neverwinter Nights</title>
+  <style>
+    :root {
+      --bg-main: #111215;
+      --bg-card: #181a1f;
+      --bg-header: #22252c;
+      --border-color: #2b2f38;
+      --accent-gold: #c8a96e;
+      --accent-gold-hover: #dfc084;
+      --text-main: #e2e4e9;
+      --text-muted: #9398a3;
+      --code-bg: #111215;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+
+    .container { max-width: 860px; margin: 0 auto; }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .breadcrumbs {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 6px;
+    }
+    .breadcrumbs a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .breadcrumbs a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(200, 169, 110, 0.7);
+    }
+
+    .btn-back {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s, background-color 0.2s;
+    }
+    .btn-back:hover {
+      border-color: var(--accent-gold);
+      background-color: #1f2229;
+      transform: translateY(-1px);
+    }
+
+    .header {
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .header h1 {
+      font-size: 26px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .guide-block {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      background-color: var(--bg-header);
+      border-left: 3px solid var(--accent-gold);
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .guide-block p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .guide-block ul {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    .guide-block li {
+      padding: 6px 0 6px 18px;
+      position: relative;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .guide-block li:last-child {
+      border-bottom: none;
+    }
+    .guide-block li::before {
+      content: "•";
+      color: var(--accent-gold);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    code {
+      background-color: var(--code-bg);
+      border: 1px solid var(--border-color);
+      color: var(--accent-gold);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 13px;
+    }
+
+    .note-box {
+      background-color: rgba(200, 169, 110, 0.08);
+      border-left: 3px solid var(--accent-gold);
+      padding: 12px 14px;
+      border-radius: 0 4px 4px 0;
+      font-size: 13px;
+      color: var(--text-main);
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="top-nav">
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a> /
+      <a href="modules.html">Модули</a> /
+      <span>Инструкция по установке</span>
+    </nav>
+    <button class="btn-back" onclick="goBack()">← Вернуться к модулю</button>
+  </div>
+
+  <header class="header">
+    <h1>Как установить пользовательский модуль</h1>
+    <p>Распакуйте скачанный архив и разложите файлы по соответствующим папкам в зависимости от вашей версии игры.</p>
+  </header>
+
+  <section class="guide-block">
+    <div class="section-header">1. Neverwinter Nights: Enhanced Edition (Steam / GOG)</div>
+    <p>В Enhanced Edition все пользовательские файлы хранятся в папке документов профиля Windows (не в папке с самой игрой):</p>
+    <p><code>Документы\Neverwinter Nights\</code></p>
+    <ul>
+      <li><code>.mod</code> — основной файл модуля поместите в папку <code>modules</code></li>
+      <li><code>.hak</code> — дополнительные ресурсы поместите в папку <code>hak</code></li>
+      <li><code>.tlk</code> — файл перевода или диалогов поместите в папку <code>tlk</code></li>
+      <li><code>.erf</code> — наборы предметов или существ поместите в папку <code>erf</code></li>
+      <li><code>.bmu</code> — музыкальные треки поместите в папку <code>music</code></li>
+      <li><code>.tga</code> / <code>.dds</code> / <code>.plt</code> — портреты и текстуры поместите в папку <code>portraits</code> или <code>override</code></li>
+    </ul>
+    <div class="note-box">
+      <strong>Запуск в игре:</strong> Главное меню → Новая игра → Другие модули (Other Modules) → выберите нужное название из списка.
+    </div>
+  </section>
+
+  <section class="guide-block">
+    <div class="section-header">2. Классическая Neverwinter Nights (v1.69)</div>
+    <p>В оригинальной версии игры файлы раскладываются напрямую в корневую директорию, куда установлена сама игра (например, <code>C:\Games\Neverwinter Nights\</code>):</p>
+    <ul>
+      <li><code>.mod</code> → в папку <code>modules</code></li>
+      <li><code>.hak</code> → в папку <code>hak</code></li>
+      <li><code>.tlk</code> → в папку <code>tlk</code></li>
+      <li><code>.bmu</code> → в папку <code>music</code></li>
+      <li><code>.tga</code> / <code>.plt</code> → в папку <code>portraits</code></li>
+      <li>Остальные файлы (скрипты, модели, озвучка) → в папку <code>override</code></li>
+    </ul>
+  </section>
+
+  <section class="guide-block">
+    <div class="section-header">3. Neverwinter Nights 2</div>
+    <p>Для второй части игры пользовательские кампании и модули обычно размещаются в папке документов:</p>
+    <p><code>Документы\Neverwinter Nights 2\</code></p>
+    <ul>
+      <li>Папка с кампанией или файл <code>.mod</code> → в папку <code>modules</code> (или <code>campaigns</code>, если это полноценная кампания)</li>
+      <li>Файлы <code>.hak</code> → в папку <code>hak</code></li>
+      <li>Файлы <code>.tlk</code> → в папку <code>tlk</code></li>
+      <li>Файлы текстур, моделей и портретов → в папку <code>override</code></li>
+    </ul>
+    <div class="note-box">
+      <strong>Важно:</strong> Если в архиве уже есть готовые папки с названиями <code>modules</code>, <code>hak</code>, <code>override</code> — просто скопируйте их в директорию игры или документов с подтверждением слияния папок.
+    </div>
+  </section>
+</div>
+
+<script>
+  function goBack() {
+    if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) {
+      history.back();
+    } else {
+      window.location.href = "modules.html";
+    }
+  }
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://yandex.ru', 'ym');
+
+    ym(114728647, 'init', { clickmap:true, trackLinks:true, accurateTrackBounce:true });
+</script>
+<noscript><div><img src="https://yandex.ru" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
