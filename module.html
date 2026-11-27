@@ -401,7 +401,8 @@
   <nav class="breadcrumbs">
     <a href="index.html">Главная</a> /
     <a href="modules.html">Модули</a> /
-    <a id="crumb-game" href="nwn1.html">Neverwinter Nights</a>
+    <a id="crumb-game" href="catalog.html?game=nwn1">Neverwinter Nights</a> /
+    <span id="crumb-title"></span>
   </nav>
 
   <header class="title-block">
@@ -509,6 +510,7 @@
 
   document.title = MODULE_DATA.title + " — Каталог модулей NWN";
   document.getElementById("mod-title").textContent = MODULE_DATA.title;
+  document.getElementById("crumb-title").textContent = MODULE_DATA.title;
   document.getElementById("mod-cover").src = MODULE_DATA.cover;
   document.getElementById("mod-download").href = MODULE_DATA.downloadUrl;
   document.getElementById("mod-file-info").textContent = MODULE_DATA.downloadInfo;
