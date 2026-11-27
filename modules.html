@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модули — Выбор версии игры</title>
+  <style>
+    :root {
+      --bg-main: #111215;
+      --bg-card: #181a1f;
+      --border-color: #2b2f38;
+      --accent-gold: #c8a96e;
+      --text-main: #e2e4e9;
+      --text-muted: #9398a3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 24px 16px;
+    }
+
+    .container { max-width: 820px; margin: 0 auto; }
+
+    .breadcrumbs {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      gap: 6px;
+    }
+    .breadcrumbs a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .breadcrumbs a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(200, 169, 110, 0.7);
+    }
+
+    .header {
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .header h1 {
+      font-size: 26px;
+      color: #ffffff;
+    }
+
+    .games-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .game-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 24px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color 0.2s, transform 0.2s, background-color 0.2s;
+    }
+    .game-card:hover {
+      border-color: var(--accent-gold);
+      background-color: #1f2229;
+      transform: translateY(-2px);
+    }
+    .game-card strong {
+      display: block;
+      font-size: 20px;
+      color: var(--accent-gold);
+      margin-bottom: 4px;
+    }
+    .game-card span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .arrow {
+      font-size: 22px;
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="breadcrumbs">
+    <a href="index.html">Главная</a> /
+    <span>Модули</span>
+  </nav>
+
+  <header class="header">
+    <h1>Выберите игру</h1>
+  </header>
+
+  <div class="games-list">
+    <a href="catalog.html?game=nwn1" class="game-card">
+      <div>
+        <strong>Neverwinter Nights</strong>
+        <span>Модули для оригинальной версии игры (v1.69 и совместимые с EE)</span>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a href="catalog.html?game=nwnee" class="game-card">
+      <div>
+        <strong>Neverwinter Nights EE</strong>
+        <span>Модули, созданные эксклюзивно для Enhanced Edition</span>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a href="catalog.html?game=nwn2" class="game-card">
+      <div>
+        <strong>Neverwinter Nights 2</strong>
+        <span>Приключения и кампании для второй части игры</span>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
