@@ -191,7 +191,7 @@ const MODULES_DB = {
     ],
 
     related: [
-      { title: "The Aielund Saga Act 3 - Return of the Ironlord", type: "Продолжение →", url: "module.html?id=aelund-saga3" }        
+  
     ],
 
     authors: [
