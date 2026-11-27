@@ -33,7 +33,15 @@
       font-size: 13px; color: var(--text-muted); margin-bottom: 12px;
       display: flex; flex-wrap: wrap; gap: 6px;
     }
-    .breadcrumbs a { color: var(--accent-gold); text-decoration: none; }
+    .breadcrumbs a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .breadcrumbs a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(200, 169, 110, 0.7);
+    }
 
     .title-block {
       margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;
@@ -348,12 +356,11 @@
   <nav class="breadcrumbs">
     <a href="index.html">Главная</a> /
     <a href="modules.html">Модули</a> /
-    <span id="crumb-title"></span>
+    <a href="nwn1.html">Neverwinter Nights</a>
   </nav>
 
   <header class="title-block">
     <h1 id="mod-title"></h1>
-    <div class="subtitle" id="mod-subtitle"></div>
   </header>
 
   <img id="mod-cover" class="hero-banner" src="" alt="Обложка модуля">
@@ -446,7 +453,6 @@
 <script>
   const MODULE_DATA = {
     title: "Elegia Eternum",
-    subtitle: "Мистическая драма • Подходит для v1.69 и Enhanced Edition",
     cover: "images/elegia-banner.jpg",
     downloadUrl: "https://yandex.ru...",
     downloadInfo: "Версия 1.04 • Русификатор встроен (48 МБ)",
@@ -498,9 +504,7 @@
   };
 
   document.title = MODULE_DATA.title + " — Каталог модулей NWN";
-  document.getElementById("crumb-title").textContent = MODULE_DATA.title;
   document.getElementById("mod-title").textContent = MODULE_DATA.title;
-  document.getElementById("mod-subtitle").textContent = MODULE_DATA.subtitle;
   document.getElementById("mod-cover").src = MODULE_DATA.cover;
   document.getElementById("mod-download").href = MODULE_DATA.downloadUrl;
   document.getElementById("mod-file-info").textContent = MODULE_DATA.downloadInfo;
