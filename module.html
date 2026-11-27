@@ -494,63 +494,17 @@
   <img id="lb-img" src="" alt="Просмотр кадра">
   <button class="lb-btn lb-next" id="lb-next" title="Вперёд">❯</button>
 </div>
+<script src="modules.js"></script>
 <script>
-  const MODULE_DATA = {
-    title: "Elegia Eternum",
-    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
-    cover: "images/elegia-banner.jpg",
-    downloadUrl: "https://yandex.ru...",
-    downloadInfo: "Версия 1.04 • Русификатор встроен (48 МБ)",
-    cepUrl: "", // Вставьте ссылку на ЯДиск с CEP (оставьте "", если CEP не нужен)
-    cepLabel: "Требуется CEP 2.65",
-    installUrl: "install.html",
-    reviewUrl: "https://vk.ru",
-
-    info: {
-      "Совместимость": "v1.69 / NWN:EE",
-      "Дата выхода": "черт знает когда",
-      "Сеттинг": "Авторский",
-      "Время игры": "3–5 часов",
-      "Ролеплей": "Средне",
-      "Сражения": "Средне",
-      "Количество игроков": "1 или более",
-      "Нач. уровень": "5-й уровень",
-      "Требования пола": "Нет",
-      "Требования классов": "Любой",
-      "Необходимость в ДМ": "Нет",
-      "Перевод": "Михаил Кард"
-    },
-
-    score: "9.3",
-    awards: [
-      "🏆 NWVault Hall of Fame",
-      "🎖️ Reviewers Award"
-    ],
-
-    description: [
-      "История начинается привычно: искатель приключений в поисках могущественного артефакта останавливается в таверне. Но именно с этого момента герой погружается в таинственный мир её обитателей.",
-      "Драматический и мистический модуль от Стефана Гагнье с авторской музыкой, озвучкой и портретами персонажей, где акцент сделан на атмосфере, диалогах и исследовании окружения."
-    ],
-
-    related: [
-      { title: "Excrucio Eternum", type: "Прямое продолжение →", url: "excrucio.html" }
-    ],
-
-    authors: [
-      { name: "Stefan Gagne", role: "Разработчик модуля →", url: "author-stefan-gagne.html" }
-    ],
-
-    screenshots: [
-      "images/elegia-1.jpg",
-      "images/elegia-2.jpg",
-      "images/elegia-3.jpg"
-    ]
-  };
+  // Определяем, какой модуль открыть по ссылке (?id=...), по умолчанию открываем elegia-eternum
+  const urlParams = new URLSearchParams(window.location.search);
+  const modId = urlParams.get("id") || "elegia-eternum";
+  const MODULE_DATA = MODULES_DB[modId] || Object.values(MODULES_DB)[0];
 
   const GAMES_MAP = {
-    nwn1: { title: "Neverwinter Nights", url: "nwn1.html" },
-    nwnee: { title: "Neverwinter Nights EE", url: "nwnee.html" },
-    nwn2: { title: "Neverwinter Nights 2", url: "nwn2.html" }
+    nwn1: { title: "Neverwinter Nights", url: "index.html?game=nwn1" },
+    nwnee: { title: "Neverwinter Nights EE", url: "index.html?game=nwnee" },
+    nwn2: { title: "Neverwinter Nights 2", url: "index.html?game=nwn2" }
   };
 
   const currentGame = GAMES_MAP[MODULE_DATA.game] || GAMES_MAP.nwn1;
