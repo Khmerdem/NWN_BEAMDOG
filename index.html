@@ -278,6 +278,56 @@
         grid-template-columns: 1fr 1fr;
       }
     }
+    .screenshots-grid img {
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .screenshots-grid img:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+    .lb-btn {
+      position: absolute;
+      background: rgba(24, 26, 31, 0.8);
+      border: 1px solid var(--border-color);
+      color: var(--accent-gold);
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    .lb-btn:hover {
+      border-color: var(--accent-gold);
+      background: #22252c;
+    }
+    .lb-close { top: 20px; right: 20px; font-size: 20px; }
+    .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
   </style>
 </head>
 <body>
@@ -373,7 +423,12 @@
       Здесь подключается стандартный виджет комментариев ВКонтакте.
     </div>
   </section>
-
+</div>
+<div id="lightbox" class="lightbox">
+  <button class="lb-btn lb-close" id="lb-close" title="Закрыть">✕</button>
+  <button class="lb-btn lb-prev" id="lb-prev" title="Назад">❮</button>
+  <img id="lb-img" src="" alt="Просмотр кадра">
+  <button class="lb-btn lb-next" id="lb-next" title="Вперёд">❯</button>
 </div>
 <script>
   const MODULE_DATA = {
@@ -477,15 +532,6 @@
 
   document.getElementById("mod-author").textContent = MODULE_DATA.author.name;
   document.getElementById("author-link").href = MODULE_DATA.author.url;
-
-  const shotsGrid = document.getElementById("screenshots-grid");
-  if (MODULE_DATA.screenshots.length > 0) {
-    MODULE_DATA.screenshots.forEach(function(src) {
-      shotsGrid.innerHTML += '<img src="' + src + '" alt="Скриншот">';
-    });
-  } else {
-    document.getElementById("screenshots-section").style.display = "none";
-  }
 
   const stars = document.querySelectorAll('#rate-buttons button');
   const rateLabel = document.getElementById('rate-label');
