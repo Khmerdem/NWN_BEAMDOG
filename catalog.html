@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список модулей — Neverwinter Nights</title>
+  <style>
+    :root {
+      --bg-main: #111215;
+      --bg-card: #181a1f;
+      --border-color: #2b2f38;
+      --accent-gold: #c8a96e;
+      --text-main: #e2e4e9;
+      --text-muted: #9398a3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 24px 16px;
+    }
+
+    .container { max-width: 920px; margin: 0 auto; }
+
+    .breadcrumbs {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .breadcrumbs a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .breadcrumbs a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(200, 169, 110, 0.7);
+    }
+
+    .header {
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .header h1 {
+      font-size: 26px;
+      color: #ffffff;
+    }
+
+    .modules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .module-banner-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text-main);
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .module-banner-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+    .module-banner-card img {
+      width: 100%;
+      max-height: 210px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .card-footer {
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .card-footer strong {
+      font-size: 18px;
+      color: #ffffff;
+    }
+    .card-meta {
+      font-size: 13px;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    .empty-msg {
+      background-color: var(--bg-card);
+      border: 1px dashed var(--border-color);
+      padding: 32px;
+      text-align: center;
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="breadcrumbs">
+    <a href="index.html">Главная</a> /
+    <a href="modules.html">Модули</a> /
+    <span id="crumb-current">Список</span>
+  </nav>
+
+  <header class="header">
+    <h1 id="page-title">Модули</h1>
+  </header>
+
+  <div class="modules-list" id="modules-list"></div>
+</div>
+
+<script src="modules.js"></script>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const gameFilter = urlParams.get("game");
+  const authorFilter = urlParams.get("author");
+
+  const GAMES_NAMES = {
+    nwn1: "Neverwinter Nights",
+    nwnee: "Neverwinter Nights EE",
+    nwn2: "Neverwinter Nights 2"
+  };
+
+  const titleEl = document.getElementById("page-title");
+  const crumbEl = document.getElementById("crumb-current");
+  const listEl = document.getElementById("modules-list");
+
+  const allEntries = Object.entries(MODULES_DB);
+  let filtered = allEntries;
+
+  if (authorFilter) {
+    titleEl.textContent = "Модули автора: " + authorFilter;
+    crumbEl.textContent = authorFilter;
+    filtered = allEntries.filter(function([id, mod]) {
+      return mod.authors && mod.authors.some(function(a) {
+        return a.name.toLowerCase() === authorFilter.toLowerCase();
+      });
+    });
+  } else if (gameFilter && GAMES_NAMES[gameFilter]) {
+    titleEl.textContent = GAMES_NAMES[gameFilter];
+    crumbEl.textContent = GAMES_NAMES[gameFilter];
+    filtered = allEntries.filter(function([id, mod]) {
+      return mod.game === gameFilter;
+    });
+  }
+
+  if (filtered.length === 0) {
+    listEl.innerHTML = '<div class="empty-msg">В этом разделе пока нет добавленных модулей.</div>';
+  } else {
+    filtered.forEach(function([id, mod]) {
+      const scoreText = mod.score ? "★ " + mod.score + " / 10" : "";
+      listEl.innerHTML +=
+        '<a href="module.html?id=' + id + '" class="module-banner-card">' +
+          '<img src="' + mod.cover + '" alt="' + mod.title + '">' +
+          '<div class="card-footer">' +
+            '<strong>' + mod.title + '</strong>' +
+            '<span class="card-meta">' + scoreText + '</span>' +
+          '</div>' +
+        '</a>';
+    });
+  }
+</script>
+
+</body>
+</html>
