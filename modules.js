@@ -191,7 +191,7 @@ const MODULES_DB = {
     ],
 
     related: [
-      { title: "The Aielund Saga - Act 1. Nature Abhors A Vacuum", type: "Предыстория →", url: "module.html?id=aelund-saga2" },
+      { title: "The Aielund Saga - Act 1. Nature Abhors A Vacuum", type: "Предыстория →", url: "module.html?id=aelund-saga1" },
       { title: "The Aielund Saga - Act 3 - Return of the Iron Lord", type: "Продолжение →", url: "module.html?id=aelund-saga3" }
     ],
 
