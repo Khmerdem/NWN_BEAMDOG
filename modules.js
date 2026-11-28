@@ -459,7 +459,8 @@ const MODULES_DB = {
     ],  // описание
 
     related: [
-      { title: "Prophet - Chapter 1 - By the Will of Kings and Mortals", type: "Продолжение →", url: "module.html?id=prophet-1" }
+      { title: "Prophet - Chapter 1 - By the Will of Kings and Mortals", type: "Продолжение →", url: "module.html?id=prophet-1" },
+      { title: "The Cave of Songs", type: "Другая история →", url: "module.html?id=cave-songs" }
     ],
 
     authors: [
@@ -623,6 +624,56 @@ const MODULES_DB = {
       "images/prophet-3-2.jpg",
       "images/prophet-3-3.jpg"
     ]
-  }
-  
+  },
+
+  "cave-songs": {
+    title: "The Cave of Songs", // Название
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
+    cover: "images/cave-songs-banner.jpg", // Превью
+    downloadUrl: "https://yandex.ru...", // Ссылка на скачивание
+    downloadInfo: "Русификатор встроен", // Текст на кнопке ссылки
+    cepUrl: "", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
+    installUrl: "install.html", // Ссылка на кнопке "Как установить"
+    reviewUrl: "https://vk.ru/@nwnbeamdogfangroup-vechnaya-elegiya-obzor-na-modul-elegia-eternum", // Ссылка на кнопке "Обзор"
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "27.04.2003",
+      "Сеттинг": "Rune Lands",
+      "Время игры": "10 часов",
+      "Ролеплей": "Средне",
+      "Сражения": "Средне",
+      "Количество игроков": "1-4",
+      "Нач. уровень": "1-6-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Можно с ДМ",
+      "Перевод": "Ragdolly, Lord_Draconis"
+    },
+
+    score: "9.1", // рейтинг
+    awards: [
+      "🏆 NWVault Hall of Fame",
+      "🎖️ Reviewers Award"
+    ], // награды
+
+    description: [
+      "Говорят, что темный лес Гримвуд является домом для самых отвратительных существ, и немногие, кто входит в его мрачные глубины, когда-либо возвращаются. Те, кто это сделал, говорят о волках размером с лошадь с глазами из светящихся углей, о великанах, чьи шаги заставляют дрожать саму землю, и да, даже о драконах, которые выдыхают смерть. Но самая известная из этих историй - это история о Пещере Песен, воющей бездне, куда даже лесные звери не осмеливаются войти. Говорят, что в пещере живет дух, настолько древний, что он старше самих гор, дух, обезумевший от печали и ненависти. Никто не знает, какие богатства можно найти в его логове. До сих пор только барды исследовали тайны пещеры, но только в своих песнях и поэзии."
+    ],  // описание
+
+    related: [
+      { title: "Prophet - Chapter 0 - It Cannot Be Denied", type: "Другая история →", url: "module.html?id=prophet-0" }
+    ],
+
+    authors: [
+      { name: "Baldecaran", role: "Разработчик модуля →", url: "catalog.html?author=Baldecaran" }
+    ],  // автор
+
+    screenshots: [
+      "images/cave-songs-1.jpg",
+      "images/cave-songs-2.jpg",
+      "images/cave-songs-3.jpg"
+    ]
+  }  
 };
