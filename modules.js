@@ -448,7 +448,7 @@ const MODULES_DB = {
 
     score: "9,0", // рейтинг
     awards: [
-      "🏆 NWVault Hall of Fame",
+      "🏆 NWVault Hall of Fame"
     ], // награды
 
     description: [
@@ -501,7 +501,7 @@ const MODULES_DB = {
 
     score: "9,3", // рейтинг
     awards: [
-      "🏆 NWVault Hall of Fame",
+      "🏆 NWVault Hall of Fame"
     ], // награды
 
     description: [
@@ -521,6 +521,6 @@ const MODULES_DB = {
       "images/prophet-1-1.jpg",
       "images/prophet-1-2.jpg",
       "images/prophet-1-3.jpg"
-     ]
+    ]
   }  
 };
