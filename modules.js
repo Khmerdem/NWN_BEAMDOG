@@ -392,7 +392,7 @@ const MODULES_DB = {
       "Перевод": "TheAngeDechu, Keleis, Lord_Draconis"
     },
 
-    score: "9,5",
+    score: "9.5",
     awards: [
       "🏆 NWVault Hall of Fame",
       "🎖 Golden Dragon Award",
@@ -446,7 +446,7 @@ const MODULES_DB = {
       "Перевод": "Ulli Pt, Lord_Draconis"
     },
 
-    score: "9,0", // рейтинг
+    score: "9.0", // рейтинг
     awards: [
       "🏆 NWVault Hall of Fame"
     ], // награды
