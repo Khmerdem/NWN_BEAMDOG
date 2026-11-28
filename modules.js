@@ -459,7 +459,7 @@ const MODULES_DB = {
     ],  // описание
 
     related: [
-      { title: "Prophet - Chapter I - By the Will of Kings and Mortals", type: "Продолжение →", url: "module.html?id=prophet-1" }
+      { title: "Prophet - Chapter 1 - By the Will of Kings and Mortals", type: "Продолжение →", url: "module.html?id=prophet-1" }
     ],
 
     authors: [
@@ -474,7 +474,7 @@ const MODULES_DB = {
   },
 
   "prophet-1": {
-    title: "Prophet - Chapter I - By the Will of Kings and Mortals", // Название
+    title: "Prophet - Chapter 1 - By the Will of Kings and Mortals", // Название
     game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
     cover: "images/prophet-1-banner.jpg", // Превью
     downloadUrl: "https://yandex.ru...", // Ссылка на скачивание
@@ -522,5 +522,107 @@ const MODULES_DB = {
       "images/prophet-1-2.jpg",
       "images/prophet-1-3.jpg"
     ]
-  }  
+  },
+
+  "prophet-2": {
+    title: "Prophet - Chapter 2 - The Century of Sorrow", // Название
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
+    cover: "images/prophet-2-banner.jpg", // Превью
+    downloadUrl: "https://yandex.ru...", // Ссылка на скачивание
+    downloadInfo: "Русификатор встроен", // Текст на кнопке ссылки
+    cepUrl: "https://neverwintervault.org/sites/neverwintervault.org/files/project/8011/files/cep_2_65_full.7z", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
+    installUrl: "install.html", // Ссылка на кнопке "Как установить"
+    reviewUrl: "", // Ссылка на кнопке "Обзор"
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "-",
+      "Сеттинг": "The Runelands",
+      "Время игры": "10–20 часов",
+      "Ролеплей": "Средне",
+      "Сражения": "Средне",
+      "Количество игроков": "1-5",
+      "Нач. уровень": "9-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Возможна игра с мастером",
+      "Перевод": "Ulli Pt, Lord_Draconis"
+    },
+
+    score: "9.4", // рейтинг
+    awards: [
+      "🏆 NWVault Hall of Fame"
+    ], // награды
+
+    description: [
+      "«В морях праха и молчания, где сновидения переплетены с воспоминаниями, там, в залах беззвучных голосов, раскроет Судьба свой великий замысел. Но зрячие не могут говорить, а те, кто может – никогда его не увидят, ибо к замкам на людских сердцах у мудрости нет ключа. И восстанут армии, и перепишут всю историю. И прибудет с северных небес облако на ветрах перемен.» - Арутен Аккабарский, 422 Л.И.",
+      "Это третий модуль кампании Пророк, и прямое продолжение 1 главы. Вы начнёте модуль на эльфийском летающем корабле, направляющемся в Хиратанум, город в пустыне. Там вы встретитесь с загадочными Ткачами снов, которые раскроют ваше тёмное будущее.",
+    ],
+    related: [
+      { title: "Prophet - Chapter 1 - By the Will of Kings and Mortals", type: "Предыстория →", url: "module.html?id=prophet-1" },
+      { title: "Prophet - Chapter 3 - That Which is Destined", type: "Продолжение →", url: "module.html?id=prophet-3" }  
+    ],
+
+    authors: [
+      { name: "Baldecaran", role: "Разработчик модуля →", url: "catalog.html?author=Baldecaran" }
+    ],  // автор
+
+    screenshots: [
+      "images/prophet-2-1.jpg",
+      "images/prophet-2-2.jpg",
+      "images/prophet-2-3.jpg"
+    ]
+  },
+
+  "prophet-3": {
+    title: "Prophet - Chapter 3 - That Which is Destined", // Название
+    game: "nwn1", // Варианты: "nwn1", "nwnee" или "nwn2"
+    cover: "images/prophet-3-banner.jpg", // Превью
+    downloadUrl: "https://yandex.ru...", // Ссылка на скачивание
+    downloadInfo: "Русификатор встроен", // Текст на кнопке ссылки
+    cepUrl: "https://neverwintervault.org/sites/neverwintervault.org/files/project/8011/files/cep_2_65_full.7z", // Ссылка на ЯДиск с CEP (оставьте "", если CEP не нужен)
+    cepLabel: "Требуется CEP 2.65", // Текст на кнопке Скачать CEP
+    installUrl: "install.html", // Ссылка на кнопке "Как установить"
+    reviewUrl: "", // Ссылка на кнопке "Обзор"
+
+    info: {
+      "Совместимость": "v1.69 / NWN:EE",
+      "Дата выхода": "-",
+      "Сеттинг": "The Runelands",
+      "Время игры": "10–20 часов",
+      "Ролеплей": "Средне",
+      "Сражения": "Средне",
+      "Количество игроков": "1-5",
+      "Нач. уровень": "9-й уровень",
+      "Требования пола": "Нет",
+      "Требования классов": "Любой",
+      "Необходимость в ДМ": "Возможна игра с мастером",
+      "Перевод": "Ulli Pt, Lord_Draconis"
+    },
+
+    score: "8.9", // рейтинг
+    awards: [
+      "🏆 NWVault Hall of Fame"
+    ], // награды
+
+    description: [
+      "«От сна пробудится спящий перед столетней болью, и он увидит разрешение оставшихся надежд. И все грядущие сны и все тайны, которые они скрывают, сделают своё последнее откровение и исчезнут с волной. Ибо хотя прошлое он не говорит, все его безмолвные слова должны оставаться. И то, что суждено - Век Скорби - волей царей и смертных не может быть отказано.» - Арутен Аккабарский, 422 Л.И.",
+      "Это последний модуль в серии Пророк, продолжающий с того места, где остановилась Глава 2. Вы начнете модуль, дрейфуя по морю снов, наблюдая, как Век Скорби разворачивается через кошмары других.",
+    ],
+    related: [
+      { title: "Prophet - Chapter 2 - The Century of Sorrow", type: "Предыстория →", url: "module.html?id=prophet-2" } 
+    ],
+
+    authors: [
+      { name: "Baldecaran", role: "Разработчик модуля →", url: "catalog.html?author=Baldecaran" }
+    ],  // автор
+
+    screenshots: [
+      "images/prophet-3-1.jpg",
+      "images/prophet-3-2.jpg",
+      "images/prophet-3-3.jpg"
+    ]
+  }
+  
 };
