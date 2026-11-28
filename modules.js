@@ -232,7 +232,7 @@ const MODULES_DB = {
       "Перевод": "Rezerford, TheAngeDechu, Keleis, Lord_Draconis"
     },
 
-    score: "9",
+    score: "9.0",
     awards: [
       "🏆 NWVault Hall of Fame",
       "🎖️ Reviewers Award"
@@ -284,7 +284,7 @@ const MODULES_DB = {
       "Перевод": "TheAngeDechu, Keleis, Lord_Draconis"
     },
 
-    score: "9,5",
+    score: "9.5",
     awards: [
       "🏆 NWVault Hall of Fame"
     ],
@@ -337,7 +337,7 @@ const MODULES_DB = {
       "Перевод": "TheAngeDechu, Keleis, Lord_Draconis"
     },
 
-    score: "9,2",
+    score: "9.2",
     awards: [
       "🏆 NWVault Hall of Fame"
     ],
@@ -459,7 +459,7 @@ const MODULES_DB = {
     ],  // описание
 
     related: [
-      { title: "Prophet - Chapter I - By the Will of Kings and Mortals ", type: "Прямое продолжение →", url: "module.html?id=prophet-1" }
+      { title: "Prophet - Chapter I - By the Will of Kings and Mortals", type: "Продолжение →", url: "module.html?id=prophet-1" }
     ],
 
     authors: [
@@ -499,7 +499,7 @@ const MODULES_DB = {
       "Перевод": "Ulli Pt, Lord_Draconis"
     },
 
-    score: "9,3", // рейтинг
+    score: "9.3", // рейтинг
     awards: [
       "🏆 NWVault Hall of Fame"
     ], // награды
@@ -507,10 +507,10 @@ const MODULES_DB = {
     description: [
       "«С севера придёт король, и велика будет его легенда. Никогда не дрогнет его оружие. Никогда не подведёт его мудрость. И всё же, даже когда все земли склонятся перед ним, а небеса будут воспевать его, никогда не знать ему покоя, ибо видел он конец света. И очнётся в нём гордость, и отречётся он от горестного сна. Но судьба удостоит его лишь ледяным взглядом, и планы её останутся прежними.» - Арутен Аккабарский, 428 Л.И.",
       "Это второй модуль кампании «Пророк». Вы можете играть в одиночку или в мультиплеере, но один из игроков должен пройти предыдущий модуль «Пролог». Вы начнёте игру в таверне «Скачущий Хобгоблин», где начнёте путешествие в поисках легендарного короля-пророка Утэра Паландраса.",
-
+    ],
     related: [
       { title: "Prophet - Chapter 0 - It Cannot Be Denied", type: "Предыстория →", url: "module.html?id=prophet-0" },
-      { title: "Prophet - Chapter 2 - The Century of Sorrow", type: "Предыстория →", url: "module.html?id=prophet-2" }  
+      { title: "Prophet - Chapter 2 - The Century of Sorrow", type: "Продолжение →", url: "module.html?id=prophet-2" }  
     ],
 
     authors: [
